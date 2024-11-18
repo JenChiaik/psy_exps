@@ -1,1 +1,0 @@
-sys_time,exp_num,exp_cfg,gender_sub1,age_sub1,gender_sub2,age_sub2,exp_time,lable,sub_id,gs_id,score_total,score_a,score_b,notes
