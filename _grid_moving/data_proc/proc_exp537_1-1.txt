@@ -1,0 +1,1 @@
+exp_time|process|stage|trial|role|step|score_0|score_1|choice_set|choice_bonus|initiation|destination|unit_bonus

@@ -1,0 +1,2 @@
+sys_time,exp_time,exp_num,exp_cfg_A,exp_cfg_B,exp_cfg_C,launch_mode,gender_sub1,age_sub1,gender_sub2,age_sub2,process,stage,trial,init_step,init_role,gone_step,score_0,score_1,#redeem,#wasted,waste_step,#contribution_0, #contribution_1,duration,current_role,choice,notes
+2024-10-31_15:04:43,1.017,592,1,1,1,test,Female,0,Female,0,overture,-1,-1,-1,-1,-1,-999,-999,-999,-999,-999,-999,-999,-1.000,-1,null,null

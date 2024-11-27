@@ -1,0 +1,7 @@
+sys_time,exp_time,exp_num,exp_cfg_A,exp_cfg_B,exp_cfg_C,launch_mode,gender_sub1,age_sub1,gender_sub2,age_sub2,process,stage,trial,init_step,init_role,gone_step,score_0,score_1,#redeem,#wasted,waste_step,#contribution_0, #contribution_1,duration,current_role,choice,notes
+2024-10-31_11:07:30,3.851,586,1,1,1,test,Female,0,Female,0,overture,-1,-1,-1,-1,-1,-999,-999,-999,-999,-999,-999,-999,-1.000,-1,null,null
+2024-10-31_11:07:50,19.121,586,1,1,1,test,Female,0,Female,0,grid_2,2,11,11,1,0,0,0,0,1,11,0,0,17.184,-1,null,null
+2024-10-31_11:08:03,32.732,586,1,1,1,test,Female,0,Female,0,grid_2,2,10,11,0,3,-8,-4,3,4,44,2,1,9.167,-1,null,null
+2024-10-31_11:08:16,45.208,586,1,1,1,test,Female,0,Female,0,grid_2,2,9,11,1,2,4,7,0,0,0,0,0,7.974,-1,null,null
+2024-10-31_11:08:22,51.619,586,1,1,1,test,Female,0,Female,0,grid_2,2,8,11,0,0,0,0,0,1,11,0,0,1.963,-1,null,null
+2024-10-31_11:08:29,58.190,586,1,1,1,test,Female,0,Female,0,finale,-1,-1,-1,-1,-1,-999,-999,-999,-999,-999,-999,-999,-1.000,-1,null,null
