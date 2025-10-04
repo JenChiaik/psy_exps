@@ -1,0 +1,17 @@
+exp_num,launch_mode,manip_order,condition_B,condition_C,sys_time,exp_time,process_name,lure,block_index,trial_index,stim_index,duration,rt,sn,choice,confidence,note
+48,1440p_flscr,1,null,null,2025-03-27_18:39:06,35.86518110000179,exercise,neutral,0,0,0,0.75,3.7241770999971777,1,0,-4,null
+48,1440p_flscr,1,null,null,2025-03-27_18:39:16,46.367007799999556,exercise,neutral,0,1,0,0.75,3.918664400000125,0,0,-6,null
+48,1440p_flscr,1,null,null,2025-03-27_18:39:24,54.451250000012806,exercise,neutral,0,2,1,0.75,1.8334276000095997,0,0,-3,null
+48,1440p_flscr,1,null,null,2025-03-27_18:39:32,62.2014288000064,exercise,neutral,0,3,1,0.75,2.1388866000052076,1,1,2,null
+48,1440p_flscr,1,null,null,2025-03-27_18:39:46,76.56843220000155,formal_neutral,neutral,1,0,0,0.75,3.003516299999319,1,1,5,null
+48,1440p_flscr,1,null,null,2025-03-27_18:39:57,87.71299110000837,formal_neutral,neutral,1,1,1,0.75,2.992843799991533,1,1,3,null
+48,1440p_flscr,1,null,null,2025-03-27_18:40:07,96.81656530001783,formal_neutral,neutral,1,2,0,0.75,3.022093200008385,0,0,-4,null
+48,1440p_flscr,1,null,null,2025-03-27_18:40:15,105.0800745000015,formal_neutral,neutral,1,3,1,0.75,2.848075699992478,0,0,-4,null
+48,1440p_flscr,1,null,null,2025-03-27_18:40:31,120.95061430000351,formal_punish,punish_MS,2,0,0,0.75,2.5755727000068873,0,0,-4,null
+48,1440p_flscr,1,null,null,2025-03-27_18:40:39,129.4343971000053,formal_punish,punish_MS,2,1,0,0.75,2.936190099979285,1,1,4,null
+48,1440p_flscr,1,null,null,2025-03-27_18:40:48,138.15866590000223,formal_punish,punish_MS,2,2,1,0.75,2.791318500007037,0,0,-5,null
+48,1440p_flscr,1,null,null,2025-03-27_18:40:57,147.38600900000893,formal_punish,punish_MS,2,3,1,0.75,3.061350299976766,1,1,5,null
+48,1440p_flscr,1,null,null,2025-03-27_18:41:11,160.73276810001698,formal_punish,punish_FA,3,0,0,0.75,2.6678698000032455,0,1,1,null
+48,1440p_flscr,1,null,null,2025-03-27_18:41:18,168.4984091000224,formal_punish,punish_FA,3,1,0,0.75,2.255376500019338,1,1,5,null
+48,1440p_flscr,1,null,null,2025-03-27_18:41:26,176.6195338999969,formal_punish,punish_FA,3,2,1,0.75,2.4428277000261005,0,0,-6,null
+48,1440p_flscr,1,null,null,2025-03-27_18:41:34,183.94169070001226,formal_punish,punish_FA,3,3,1,0.75,1.8418792000156827,1,1,5,null

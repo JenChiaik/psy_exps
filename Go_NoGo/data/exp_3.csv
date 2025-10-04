@@ -1,0 +1,5 @@
+exp_num,disp_mode,manip_order,condition_B,condition_C,sys_time,exp_time,process_name,block_index,trial_index,disp_stim,target_stim,sub_react,sub_RT,note
+3,1440p_debug,null,null,null,2025-06-11_11:00:40,15.200024700010545,GO,0,0,d,Any,no,None,None
+3,1440p_debug,null,null,null,2025-06-11_11:00:41,16.149035100010224,GO,0,1,d,Any,yes,0.20112329999392387,None
+3,1440p_debug,null,null,null,2025-06-11_11:00:42,17.042539900008705,GO,0,2,b,Any,yes,0.1338753000018187,None
+3,1440p_debug,null,null,null,2025-06-11_11:00:43,18.29591140001139,GO,0,3,b,Any,no,None,None

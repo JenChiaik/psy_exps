@@ -1,0 +1,165 @@
+
+class Temp:
+
+    def __init__(self, json:str='stim_array.json'):
+        '''
+        初始化时，须解包一个 json 文件。
+        - json: 记录各个 trail 的前景矩形高度信息的 json 文件路径。
+        '''
+
+        self.json_path = os.path.join(os.path.dirname(__file__), 'stim_array.json')
+
+        with open(file=json, mode='r', encoding='utf-8') as file:
+
+            array_dict = json.load(file)
+
+        def convert_keys_to_int(d: dict) -> dict:
+            '''
+            将字典的所有键从 str 转为 int 类型。
+            '''
+            return {int(k):v for k, v in d.items()}
+
+        # 练习
+        ## CF
+        self.soloCF_exercise_w = convert_keys_to_int(array_dict['block_soloCF_exercise_w'])
+        self.soloCF_exercise_b = convert_keys_to_int(array_dict['block_soloCF_exercise_b'])
+        ## RT
+        self.soloRT_exercise_w = convert_keys_to_int(array_dict['block_soloRT_exercise_w'])
+        self.soloRT_exercise_b = convert_keys_to_int(array_dict['block_soloRT_exercise_b'])
+
+        # solo
+        ## soloCF
+        self.soloCF_normal_w = convert_keys_to_int(array_dict['block_soloCF_normal_w'])
+        self.soloCF_normal_b = convert_keys_to_int(array_dict['block_soloCF_normal_b'])
+        ## soloRT
+        self.soloRT_normal_w = convert_keys_to_int(array_dict['block_soloRT_normal_w'])
+        self.soloRT_normal_b = convert_keys_to_int(array_dict['block_soloRT_normal_b'])
+
+        # dual
+        ## dualCF
+        self.dualCF_normal_w = convert_keys_to_int(array_dict['block_dualCF_normal_w'])
+        self.dualCF_normal_b = convert_keys_to_int(array_dict['block_dualCF_normal_b'])
+        self.dualCF_hard_w   = convert_keys_to_int(array_dict['block_dualCF_hard_w'])
+        self.dualCF_hard_b   = convert_keys_to_int(array_dict['block_dualCF_hard_b'])
+        ## dualRT
+        self.dualRT_normal_w = convert_keys_to_int(array_dict['block_dualRT_normal_w'])
+        self.dualRT_normal_b = convert_keys_to_int(array_dict['block_dualRT_normal_b'])
+        self.dualRT_hard_w   = convert_keys_to_int(array_dict['block_dualRT_hard_w'])
+        self.dualRT_hard_b   = convert_keys_to_int(array_dict['block_dualRT_hard_b'])
+
+
+
+    def block(
+            self, 
+            process_name:str, 
+            block_index:int, trial_num:int,
+            task_mode:str, report_mode:str,
+            ):
+        '''
+        一个完整的 block。
+        CF / RT 变量为被试内。
+        顺序为：练习——solo——dual，练习——solo——dual。
+        - process_name: 写入数据的标记名称。
+        - block_index: 当前 block 的索引。
+            - 0 / 3: 练习阶段（CF / RT，counterbalance）。
+            - 1 / 4: solo 阶段（CF / RT，顺序同练习阶段）。
+            - 2 / 5: dual 阶段（CF / RT，顺序同练习阶段）。
+        - trial_num: 当前 block 的 trial 数量。
+        - task_mode: 'exercise' / 'solo' / 'dual'。
+        - report_mode: 'confidence' 或 'ratio'。
+        '''
+
+        # dual 模式下先计算对应 solo 的正确率
+        if task_mode == 'dual':
+            if report_mode == 'confidence':
+                PC_0 = self.soloPerf_CF_0[0] + 0.5 / (self.soloPerf_CF_0[0] + self.soloPerf_CF_0[1] + 1)
+                PC_1 = self.soloPerf_CF_1[0] + 0.5 / (self.soloPerf_CF_1[0] + self.soloPerf_CF_1[1] + 1)
+            elif report_mode == 'ratio':
+                PC_0 = self.soloPerf_RT_0[0] + 0.5 / (self.soloPerf_RT_0[0] + self.soloPerf_RT_0[1] + 1)
+                PC_1 = self.soloPerf_RT_1[0] + 0.5 / (self.soloPerf_RT_1[0] + self.soloPerf_RT_1[1] + 1)
+
+        # 设置刺激字典
+        if task_mode == 'exercise':
+            if report_mode == 'confidence':
+                stim_dict_0_w = self.soloCF_exercise_w
+                stim_dict_0_b = self.soloCF_exercise_b
+                stim_dict_1_w = self.soloCF_exercise_w
+                stim_dict_1_b = self.soloCF_exercise_b
+            elif report_mode == 'ratio':
+                stim_dict_0_w = self.soloRT_exercise_w
+                stim_dict_0_b = self.soloRT_exercise_b
+                stim_dict_1_w = self.soloRT_exercise_w
+                stim_dict_1_b = self.soloRT_exercise_b
+        elif task_mode == 'solo':
+            if report_mode == 'confidence':
+                stim_dict_0_w = self.soloCF_normal_w
+                stim_dict_0_b = self.soloCF_normal_b
+                stim_dict_1_w = self.soloCF_normal_w
+                stim_dict_1_b = self.soloCF_normal_b
+            elif report_mode == 'ratio':
+                stim_dict_0_w = self.soloRT_normal_w
+                stim_dict_0_b = self.soloRT_normal_b
+                stim_dict_1_w = self.soloRT_normal_w
+                stim_dict_1_b = self.soloRT_normal_b
+        elif task_mode == 'dual':
+            if report_mode == 'confidence':
+                if PC_0 >= PC_1: # sub0 高能力，sub 1 接受更难刺激
+                    stim_dict_0_w = self.dualCF_normal_w
+                    stim_dict_0_b = self.dualCF_normal_b
+                    stim_dict_1_w = self.dualCF_hard_w
+                    stim_dict_1_b = self.dualCF_hard_b
+                else: # sub 1 高能力，sub 0 接受更难刺激
+                    stim_dict_0_w = self.dualCF_hard_w
+                    stim_dict_0_b = self.dualCF_hard_b
+                    stim_dict_1_w = self.dualCF_normal_w
+                    stim_dict_1_b = self.dualCF_normal_b
+            elif report_mode == 'ratio':
+                if PC_0 >= PC_1: # sub0 高能力，sub 1 接受更难刺激
+                    stim_dict_0_w = self.dualRT_normal_w
+                    stim_dict_0_b = self.dualRT_normal_b
+                    stim_dict_1_w = self.dualRT_hard_w
+                    stim_dict_1_b = self.dualRT_hard_b
+                else: # sub 1 高能力，sub 0 接受更难刺激
+                    stim_dict_0_w = self.dualRT_hard_w
+                    stim_dict_0_b = self.dualRT_hard_b
+                    stim_dict_1_w = self.dualRT_normal_w
+                    stim_dict_1_b = self.dualRT_normal_b
+
+
+
+        def pic(
+            self, 
+            pic_0:str, pic_1:str
+            ) -> None:
+        '''
+        渲染【两个窗口】的图像，在外部控制跳转逻辑。
+        - pic_0/1: 图像文件名，位于image目录。
+        '''
+
+        ratio_win = self.win_ratio
+
+        if pic_0:
+            path_0 = os.path.join('image', pic_0)
+            with Image.open(path_0) as img_0:
+                ratio_pic_0 = img_0.size[0] / img_0.size[1]
+            if ratio_pic_0 >= ratio_win: #超宽图片
+                pic_x_0 = self.win_size[0]
+                pic_y_0 = int(img_0.size[1]*pic_x_0/img_0.size[0])
+            else: #超高图片
+                pic_y_0 = self.win_size[1]
+                pic_x_0 = int(img_0.size[0]*pic_y_0/img_0.size[1])
+            content_win0 = visual.ImageStim(image=path_0, size=(pic_x_0, pic_y_0), units='pix', win=self.win0)
+            content_win0.draw(), self.win0.flip()
+            
+        if pic_1:
+            path_1 = os.path.join('image', pic_1)
+            with Image.open(path_1) as img_1:
+                ratio_pic_1 = img_1.size[0] / img_1.size[1]
+            if ratio_pic_1 >= ratio_win: #超宽图片
+                pic_x_1 = self.win_size[0]
+                pic_y_1 = int(img_1.size[1]*pic_x_1/img_1.size[0])
+            else: #超高图片
+                pic_y_1 = self.win_size[1]
+                pic_x_1 = int(img_1.size[0]*pic_y_1/img_1.size[1])
+            content_win1 = visual.ImageStim(image=path_1, size=(pic_x_1, pic_y_1), units='pix', win=self.win1)
+            content_win1.draw(), self.win1.flip()

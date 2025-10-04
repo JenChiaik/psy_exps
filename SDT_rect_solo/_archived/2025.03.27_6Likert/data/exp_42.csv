@@ -1,0 +1,2 @@
+exp_num,launch_mode,manip_order,condition_B,condition_C,sys_time,exp_time,process_name,lure,block_index,trial_index,stim_index,duration,rt,sn,choice,confidence,note
+42,1440p_flscr,2,null,null,2025-03-27_16:33:08,15.843867100018542,练习，s2 + n2,neutral,0,0,0,0.75,8.658064499992179,0,0,-6,null

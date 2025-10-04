@@ -1,0 +1,17 @@
+exp_num,launch_mode,manip_order,condition_B,condition_C,sys_time,exp_time,process_name,lure,block_index,trial_index,stim_index,duration,rt,sn,choice,confidence,note
+49,1440p_flscr,1,null,null,2025-03-27_18:57:02,36.725722900009714,exercise,neutral,0,0,0,0.75,6.7292883999762125,1,0,-6,null
+49,1440p_flscr,1,null,null,2025-03-27_18:57:11,46.30254479998257,exercise,neutral,0,1,0,0.75,3.3021126000094227,0,0,-5,null
+49,1440p_flscr,1,null,null,2025-03-27_18:57:18,53.52060679998249,exercise,neutral,0,2,1,0.75,1.2115033000009134,1,1,1,null
+49,1440p_flscr,1,null,null,2025-03-27_18:57:26,60.85951499998919,exercise,neutral,0,3,1,0.75,1.4778036000207067,0,1,2,null
+49,1440p_flscr,1,null,null,2025-03-27_18:57:42,76.84814399998868,formal_neutral,neutral,1,0,0,0.75,2.2840439999999944,1,1,4,null
+49,1440p_flscr,1,null,null,2025-03-27_18:57:49,84.62307880001026,formal_neutral,neutral,1,1,0,0.75,2.4006669000082184,0,0,-4,null
+49,1440p_flscr,1,null,null,2025-03-27_18:57:58,92.78236829998787,formal_neutral,neutral,1,2,1,0.75,2.573673900013091,0,0,-5,null
+49,1440p_flscr,1,null,null,2025-03-27_18:58:05,100.50037339999108,formal_neutral,neutral,1,3,1,0.75,2.263006100023631,1,1,6,null
+49,1440p_flscr,1,null,null,2025-03-27_18:59:32,187.2714858999825,formal_punish_FA,punish_MS,2,0,0,0.75,2.918433400016511,0,0,-4,null
+49,1440p_flscr,1,null,null,2025-03-27_18:59:40,195.0493840999843,formal_punish_FA,punish_MS,2,1,0,0.75,2.3607077000197023,1,0,-3,null
+49,1440p_flscr,1,null,null,2025-03-27_18:59:49,203.79033139999956,formal_punish_FA,punish_MS,2,2,1,0.75,2.7480772999988403,1,1,3,null
+49,1440p_flscr,1,null,null,2025-03-27_18:59:59,214.42865109999548,formal_punish_FA,punish_MS,2,3,1,0.75,2.927229399996577,0,0,-6,null
+49,1440p_flscr,1,null,null,2025-03-27_19:01:22,295.1898576999956,formal_neutral,neutral,1,0,0,0.75,9.334555799985537,1,1,1,null
+49,1440p_flscr,1,null,null,2025-03-27_19:01:29,301.86621410000953,formal_neutral,neutral,1,1,1,0.75,1.0758411999850068,1,1,2,null
+49,1440p_flscr,1,null,null,2025-03-27_19:01:36,309.04884269999457,formal_neutral,neutral,1,2,0,0.75,1.3258515000052284,0,1,3,null
+49,1440p_flscr,1,null,null,2025-03-27_19:01:43,315.4351181999955,formal_neutral,neutral,1,3,1,0.75,1.0080962000065483,0,0,-2,null

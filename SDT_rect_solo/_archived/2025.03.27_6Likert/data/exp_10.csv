@@ -1,0 +1,2 @@
+exp_num,launch_mode,manip_order,condition_B,condition_C,sys_time,exp_time,process_name,block_index,lure_mode,trail_index,stim_index,duration,sn,choice,confidence,note
+10,1440p_debug,1,null,null,2025-03-26_19:35:01,15.847540999995545,练习，s2 + n2,neutral,0,0,0,1.0,8.082678799997666,0,0,-4,null
